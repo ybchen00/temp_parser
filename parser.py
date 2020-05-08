@@ -1,4 +1,3 @@
-  
 import csv
 import re
 import datetime
@@ -8,6 +7,7 @@ import os
 import pandas as pd
 import numpy as np
 from bs4 import BeautifulSoup
+import scraperwiki
 
 URL="https://my.nycha.info/PublicSite/Transparency/IndoorTemp"
 page=requests.get(URL)
@@ -54,13 +54,17 @@ def neat_table(soup):
       clean[i+1] = clean[i] + clean[i+1]
     else:
       final.append(clean[i])
-  # print(final)
+  #print(final)
 
   # Step 5. Put into df!! :)
   df = pd.DataFrame.from_records(final, columns=headers)
   df = df.replace(r'^\s*$', np.nan, regex=True)
   df = df.fillna(method='ffill')
   display(df)
+  d = df.to_dict('records')
+  return d
 
-neat_table(soup)
-# scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
+dict_list = neat_table(soup)
+for d in dict_list:
+  print(d)
+  scraperwiki.sqlite.save(unique_keys=['Development'], data=d)
