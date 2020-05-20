@@ -5,7 +5,7 @@ import datetime
 import requests
 import os
 #import pandas as pd
-import Numpy as np
+import numpy as np
 from bs4 import BeautifulSoup
 import scraperwiki
 
