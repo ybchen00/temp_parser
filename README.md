@@ -5,7 +5,7 @@ NYCHA regularly updates a [web page](https://my.nycha.info/PublicSite/Transparen
 ## Morph.io scraper ##
 This web scraper runs daily and extracts the data from all of these tables and saves the results in a SQLite database. The scraper is hosted on [morph.io](http://morph.io/).
 
-See [temp_scraper](https://my.nycha.info/PublicSite/Transparency/IndoorTemp) on morph.io.
+See [temp_scraper](https://morph.io/ybchen00/temp_parser) on morph.io.
 
 
 Credit to @austensen for inspiring this scraper.
