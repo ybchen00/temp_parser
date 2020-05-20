@@ -65,5 +65,4 @@ def neat_table(soup):
 
 dict_list = neat_table(soup)
 for d in dict_list:
-  print(d)
   scraperwiki.sqlite.save(unique_keys=['Development'], data=d)
