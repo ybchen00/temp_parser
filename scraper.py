@@ -1,10 +1,9 @@
 import csv
 import re
 import datetime
-#import pytz
 import requests
 import os
-#import pandas as pd
+import pandas as pd
 import numpy as np
 from bs4 import BeautifulSoup
 import scraperwiki
