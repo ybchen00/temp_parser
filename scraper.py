@@ -59,7 +59,7 @@ def neat_table(soup):
   df = pd.DataFrame.from_records(final, columns=headers)
   df = df.replace(r'^\s*$', np.nan, regex=True)
   df = df.fillna(method='ffill')
-  display(df)
+  #display(df)
   d = df.to_dict('records')
   return d
 
